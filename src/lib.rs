@@ -90,6 +90,12 @@ pub struct Header {
 
     /// Average bitrate in bits/sec
     pub avg_bitrate_bps: Option<u32>,
+
+    /// Maximum bitrate in bits/sec
+    pub max_bitrate_bps: Option<u32>,
+
+    /// Minimum bitrate in bits/sec
+    pub min_bitrate_bps: Option<u32>,
 }
 
 /// Parse mode
@@ -344,6 +350,8 @@ impl Header {
                                         total_duration,
                                         avg_sample_rate_hz: Some(frame_header.sample_rate_hz),
                                         avg_bitrate_bps: frame_header.bitrate_bps,
+                                        max_bitrate_bps: None,
+                                        min_bitrate_bps: None,
                                     });
                                 }
                                 ParseMode::IgnoreVbrHeaders => {
@@ -496,6 +504,8 @@ impl Header {
             total_duration,
             avg_sample_rate_hz,
             avg_bitrate_bps,
+            max_bitrate_bps: Some(max_bitrate_bps),
+            min_bitrate_bps: Some(min_bitrate_bps),
         })
     }
 
