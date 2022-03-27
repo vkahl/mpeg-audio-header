@@ -9,6 +9,8 @@ fn public_api() {
         mode: Some(Mode::DualChannel),
         version: Some(Version::Mpeg1),
         avg_bitrate_bps: None,
+        max_bitrate_bps: None,
+        min_bitrate_bps: None,
         min_channel_count: Default::default(),
         max_channel_count: Default::default(),
         min_sample_rate_hz: Default::default(),
