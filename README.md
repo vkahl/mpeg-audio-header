@@ -12,6 +12,15 @@
 
 Parse metadata of an MPEG audio stream from VBR (XING/VBRI) and MPEG frame headers.
 
+## Disclaimer
+
+**_This crate is unmaintained. I recommend to take a look at
+[lofty-rs](https://github.com/Serial-ATA/lofty-rs)
+as a more versatile replacement._**
+
+If you encounter issues or missing features in lofty-rs, please report
+them and they will probably get fixed quickly.
+
 ## Motivation
 
 The specification of the MPEG audio format is very weak. There is no dedicated header that
@@ -54,7 +63,7 @@ Run the tests with `-- --nocapture` for diagnostic output on `stdout`/`stderr`.
 
 This crate initially started as a fork of [mp3-duration](https://crates.io/crates/mp3-duration).
 Soon it became obvious that a substantial rewrite was necessary to cope with the new
-requirements and to properly handle all format variants corrrectly. Yet some code
+requirements and to properly handle all format variants correctly. Yet some code
 fragments may still reflect that heritage.
 
 Some ideas have also been borrowed from [symphonia](https://crates.io/crates/symphonia)
